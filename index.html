@@ -1,134 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Order-Lenses</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <style>
-        * {
-            text-align: center;
-            font-size: 20px;
-        }
-        .all{
-            width: fit-content;
-            height: fit-content;
-            margin-top: 110px;
-            margin-left: auto;
-            margin-right: auto;
-            border: black solid 1px;
-            padding: 2px 5px;
-        }
+      * {
+        text-align: center;
+        font-size: 20px;
+      }
 
-        table {
-            border-collapse: collapse;
-        }
+      .all {
+        width: fit-content;
+        height: fit-content;
+        margin-top: 110px;
+        margin-left: auto;
+        margin-right: auto;
+        border: black solid 1px;
+        padding: 2px 5px;
+      }
 
-        table,
-        td {
-            border: 1px solid black;
-        }
+      table {
+        border-collapse: collapse;
+      }
 
-        input {
-            width: 55px;
-        }
+      table,
+      td {
+        border: 1px solid black;
+      }
 
-        .tab {
-            display: inline-block;
-        }
+      input {
+        width: 55px;
+      }
 
-        .l-type {
-            width: 10rem;
-        }
+      .tab {
+        display: inline-block;
+      }
 
-        .dia-com {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: -20px;
-        }
+      .l-type {
+        width: 10rem;
+      }
 
-        img {
-            margin-top: 5px;
-        }
+      .dia-com {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: -20px;
+      }
 
-        hr {
-            margin-top: -10px;
-        }
+      img {
+        margin-top: 5px;
+      }
+
+      hr {
+        margin-top: -10px;
+      }
+      a{
+        all: unset;
+        cursor: pointer;
+        color: rgb(255, 109, 19);
+        font-size: 30px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <div class="all">
-        <img src="favicon.ico" alt="">
-        <h2>Alrayyan optics</h2>
-        <h4>RX: <input autofocus style="width: 90px;" type="text"></h4>
-        <h3>Lens Type: <select style="width: 270px;" name="" id="">
-                <option value="">Pl Normal</option>
-                <option value="">Pl ARC</option>
-                <option value="">Poly ARC</option>
-                <option value="">Pl blue block</option>
-                <option value="">Pl blue cut</option>
-                <option value="">Pl 1.61 ARC</option>
-                <option value="">Pl 1.67 ARC</option>
-            <option value="">Pl 1.74 ARC</option>
-                <option value="">Pl D-Bifocal Normal</option>
-                <option value="">Pl D-Bifocal ARC</option>
-                <option value="">Pl D-Bifocal Trans ARC</option>
-                <option value="">Pl Krytop Bifocal Normal</option>
-                <option value="">Pl Krytop Bifocal ARC</option>
-                <option value="">Pl Trans Gray ARC</option>
-                <option value="">Pl Trans Brown ARC</option>
-                <option value="">Pl Trans Gray 1.67 ARC</option>
-                <option value="">Pl Photo Gray 1.6 ARC</option>
-                 <option value="">Glass Photo Gray</option>
-                <option value="">Glass Photo Brown</option>
-                <option value="">Glass White ARC</option>
-                <option value="">Glass White </option>
-                <option value="">Glass Bifocal Krytop P.G.X </option>
-            </select></h3>
+  <body>
+    <div id="all" class="all">
+      <img src="favicon.ico" alt="" />
+      <h2>Alrayyan optics</h2>
+      <h4>RX: <input id="rxNum" autofocus style="width: 90px" type="text" /></h4>
+      <h3>
+        Lens Type:
+        <select style="width: 270px" name="" id="">
+          <option value="">Pl Normal</option>
+          <option value="">Pl ARC</option>
+          <option value="">Poly ARC</option>
+          <option value="">Pl blue block</option>
+          <option value="">Pl blue cut</option>
+          <option value="">Pl 1.61 ARC</option>
+          <option value="">Pl 1.67 ARC</option>
+          <option value="">Pl 1.74 ARC</option>
+          <option value="">Pl D-Bifocal Normal</option>
+          <option value="">Pl D-Bifocal ARC</option>
+          <option value="">Pl D-Bifocal Trans ARC</option>
+          <option value="">Pl Krytop Bifocal Normal</option>
+          <option value="">Pl Krytop Bifocal ARC</option>
+          <option value="">Pl Trans Gray ARC</option>
+          <option value="">Pl Trans Brown ARC</option>
+          <option value="">Pl Trans Gray 1.67 ARC</option>
+          <option value="">Pl Photo Gray 1.6 ARC</option>
+          <option value="">Glass Photo Gray</option>
+          <option value="">Glass Photo Brown</option>
+          <option value="">Glass White ARC</option>
+          <option value="">Glass White</option>
+          <option value="">Glass Bifocal Krytop P.G.X</option>
+        </select>
+      </h3>
 
-
-        <div class="tab">
-            <table>
-                <tr>
-                    <td></td>
-                    <td>SPH</td>
-                    <td>CYL</td>
-                    <td>AXIS</td>
-                    <td>ADD</td>
-                    <td>QTY</td>
-                </tr>
-                <tr>
-                    <td>R-eye</td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>L-eye</td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                </tr>
-            </table>
+      <div class="tab">
+        <table>
+          <tr>
+            <td></td>
+            <td>SPH</td>
+            <td>CYL</td>
+            <td>AXIS</td>
+            <td>ADD</td>
+            <td>QTY</td>
+          </tr>
+          <tr>
+            <td>R-eye</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>L-eye</td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <div class="dia-com">
+        <div>
+          <h2>DIA <input style="font-size: 15px" type="text" /></h2>
         </div>
-        <br>
-        <div class="dia-com">
-            <div>
-                <h2>DIA <input style="font-size: 15px;" type="text"></h2>
-            </div>
-            <div style="margin-left: 5px;">
-                <h4>comments <input style="width: 140px;" type="text"></h4>
-            </div>
+        <div style="margin-left: 5px">
+          <h4>comments <input style="width: 140px" type="text" /></h4>
         </div>
+      </div>
     </div>
+    <br />
+    <a downlode id="screenBtn">SCREEN SHOT</a>
     
+
+    <script>
+      let screenBtn = document.getElementById("screenBtn");
+      let all = document.getElementById("all");
+      let rxNum = document.getElementById("rxNum")
+  
+      screenBtn.addEventListener("click", async () => {
+        const canvas = await html2canvas(all);
+        const imgURL = canvas.toDataURL("asd");
+        screenBtn.href = imgURL
+        screenBtn.download = rxNum.value
+        screenBtn.innerHTML = "Download Now"
+      });
+    </script>
 
     <!-- <script>
         // تعريف متغيرات الميلاد والتاريخ الحالي
@@ -167,9 +199,5 @@
         document.write("Minutes: " + minutes + "<br>");
         document.write("Seconds: " + seconds + "<br>");
       </script> -->
-      
-
-
-</body>
-
+  </body>
 </html>
