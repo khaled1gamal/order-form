@@ -64,20 +64,44 @@
       hr {
         margin-top: -10px;
       }
-      a{
+      a {
         all: unset;
         cursor: pointer;
         color: rgb(255, 109, 19);
         font-size: 30px;
+        user-select: none;
+      }
+      @keyframes mymove {
+        0% {
+          clip-path: circle(60%);
+        }
+        25% {
+          clip-path: circle(100%);
+        }
+        75% {
+          clip-path: circle(100%);
+        }
+        100% {
+          clip-path: circle(60%);
+        }
+      }
+      .download {
+        background-color: rgb(66, 66, 62);
+        padding: 5px 10px;
+        animation: mymove 1s infinite;
+        border-radius: 20px;
+        color: aliceblue;
       }
     </style>
   </head>
 
   <body>
     <div id="all" class="all">
-      <img src="favicon.ico" alt="" />
+      <img src="./favicon.ico" alt="" />
       <h2>Alrayyan optics</h2>
-      <h4>RX: <input id="rxNum" autofocus style="width: 90px" type="text" /></h4>
+      <h4>
+        RX: <input id="rxNum" autofocus style="width: 90px" type="text" />
+      </h4>
       <h3>
         Lens Type:
         <select style="width: 270px" name="" id="">
@@ -146,19 +170,19 @@
     </div>
     <br />
     <a downlode id="screenBtn">SCREEN SHOT</a>
-    
 
     <script>
       let screenBtn = document.getElementById("screenBtn");
       let all = document.getElementById("all");
-      let rxNum = document.getElementById("rxNum")
-  
+      let rxNum = document.getElementById("rxNum");
+
       screenBtn.addEventListener("click", async () => {
         const canvas = await html2canvas(all);
         const imgURL = canvas.toDataURL("asd");
-        screenBtn.href = imgURL
-        screenBtn.download = rxNum.value
-        screenBtn.innerHTML = "Download Now"
+        screenBtn.href = imgURL;
+        screenBtn.download = rxNum.value;
+        screenBtn.innerHTML = "Download Now";
+        screenBtn.classList.add("download");
       });
     </script>
 
