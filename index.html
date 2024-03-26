@@ -88,9 +88,12 @@
       .download {
         background-color: rgb(66, 66, 62);
         padding: 5px 10px;
-        animation: mymove 2s infinite;
+        animation: mymove 1s infinite;
         border-radius: 20px;
         color: aliceblue;
+      }
+      #all > div.dia-com > div:nth-child(1) > h2 > input[type=text]{
+        height: 25px;
       }
     </style>
   </head>
@@ -105,28 +108,28 @@
       <h3>
         Lens Type:
         <select style="width: 270px" name="" id="">
-          <option value="">Pl Normal</option>
-          <option value="">Pl ARC</option>
-          <option value="">Poly ARC</option>
-          <option value="">Pl blue block</option>
-          <option value="">Pl blue cut</option>
-          <option value="">Pl 1.61 ARC</option>
-          <option value="">Pl 1.67 ARC</option>
-          <option value="">Pl 1.74 ARC</option>
-          <option value="">Pl D-Bifocal Normal</option>
-          <option value="">Pl D-Bifocal ARC</option>
-          <option value="">Pl D-Bifocal Trans ARC</option>
-          <option value="">Pl Krytop Bifocal Normal</option>
-          <option value="">Pl Krytop Bifocal ARC</option>
-          <option value="">Pl Trans Gray ARC</option>
-          <option value="">Pl Trans Brown ARC</option>
-          <option value="">Pl Trans Gray 1.67 ARC</option>
-          <option value="">Pl Photo Gray 1.6 ARC</option>
-          <option value="">Glass Photo Gray</option>
-          <option value="">Glass Photo Brown</option>
-          <option value="">Glass White ARC</option>
-          <option value="">Glass White</option>
-          <option value="">Glass Bifocal Krytop P.G.X</option>
+          <option value="Pl Normal">Pl Normal</option>
+          <option value="Pl ARC">Pl ARC</option>
+          <option value="Poly ARC">Poly ARC</option>
+          <option value="Pl blue block">Pl blue block</option>
+          <option value="Pl blue cut">Pl blue cut</option>
+          <option value="Pl 1.61 ARC">Pl 1.61 ARC</option>
+          <option value="Pl 1.67 ARC">Pl 1.67 ARC</option>
+          <option value="Pl 1.74 ARC">Pl 1.74 ARC</option>
+          <option value="Pl D-Bifocal Normal">Pl D-Bifocal Normal</option>
+          <option value="Pl D-Bifocal ARC">Pl D-Bifocal ARC</option>
+          <option value="Pl D-Bifocal Trans ARC">Pl D-Bifocal Trans ARC</option>
+          <option value="Pl Krytop Bifocal Normal">Pl Krytop Bifocal Normal</option>
+          <option value="Pl Krytop Bifocal ARC">Pl Krytop Bifocal ARC</option>
+          <option value="Pl Trans Gray ARC">Pl Trans Gray ARC</option>
+          <option value="Pl Trans Brown ARC">Pl Trans Brown ARC</option>
+          <option value="Pl Trans Gray 1.67 ARC">Pl Trans Gray 1.67 ARC</option>
+          <option value="Pl Photo Gray 1.6 ARC">Pl Photo Gray 1.6 ARC</option>
+          <option value="Glass Photo Gray">Glass Photo Gray</option>
+          <option value="Glass Photo Brown">Glass Photo Brown</option>
+          <option value="Glass White ARC">Glass White ARC</option>
+          <option value="Glass White">Glass White</option>
+          <option value="Glass Bifocal Krytop P.G.X">Glass Bifocal Krytop P.G.X</option>
         </select>
       </h3>
 
@@ -169,7 +172,7 @@
       </div>
     </div>
     <br />
-<!--     <a downlode id="screenBtn">SCREEN SHOT</a> -->
+    <a downlode id="screenBtn">SCREEN SHOT</a>
 
     <script>
       let screenBtn = document.getElementById("screenBtn");
